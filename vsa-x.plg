@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
 <!DOCTYPE PLUGIN [
     <!ENTITY name "VSA-X">
-    <!ENTITY author "Donato Orlando"> <!ENTITY version "10.17.0"> <!ENTITY md5 "CALCULATE_MD5_SUM_OF_THE_TXZ_FILE"> <!ENTITY plugdir "/usr/local/emhttp/plugins/&name;">
-    <!ENTITY downloadURL "https://vsax.net/updates.vsax.net/10.17.0/2B19D7/vsax_x64.pkg.tar.xz"> <!ENTITY description "Installs and manages Kaseya VSA X Agent (Slackware Pkg).">
+    <!ENTITY author "DonatoM3"> <!ENTITY version "10.17.0"> <!ENTITY md5 "CALCULATE_MD5_SUM_OF_THE_TXZ_FILE"> <!ENTITY plugdir "/usr/local/emhttp/plugins/&name;">
+    <!ENTITY pluginURL "https://raw.githubusercontent.com/donatom3/unraid_vsa_x_plugin/refs/heads/main/vsa-x.plg"> <!ENTITY downloadURL ""https://vsax.net/updates.vsax.net/10.17.0/2B19D7/vsax_x64.pkg.tar.xz"> <!ENTITY description "Installs and manages Kaseya VSA X Agent (Slackware Pkg).">
     ]>
 <PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" description="&description;">
 
