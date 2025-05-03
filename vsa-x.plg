@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE PLUGIN [
+    <!ENTITY name "VSA-X">
+    <!ENTITY author "Donato Orlando"> <!ENTITY version "10.17.0"> <!ENTITY md5 "CALCULATE_MD5_SUM_OF_THE_TXZ_FILE"> <!ENTITY plugdir "/usr/local/emhttp/plugins/&name;">
+    <!ENTITY downloadURL "https://vsax.net/updates.vsax.net/10.17.0/2B19D7/vsax_x64.pkg.tar.xz"> <!ENTITY description "Installs and manages Kaseya VSA X Agent (Slackware Pkg).">
+    ]>
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" description="&description;">
+
+    <CHANGES>
+    YYYY.MM.DD - Initial Release
+    </CHANGES>
+
+    <FILE Name="/boot/config/plugins/&name;/vsax-&version;-x86_64-1.txz" Run="upgradepkg --install-new">
+        <URL>&downloadURL;</URL>
+        <MD5>&md5;</MD5>
+    </FILE>
+
+    <FILE Run="/bin/bash">
+        <INLINE>
+    # Add any post-installation commands here if the package's doinst.sh isn't enough
+    # Eg: Create symlinks, display messages, etc.
+    echo ""
+    echo "----------------------------------------------------"
+    echo " &name; &version; has been installed."
+    # Add registration message if needed
+    echo " Use 'vsax-registration' command if required."
+    echo "----------------------------------------------------"
+    echo ""
+    </INLINE>
+    </FILE>
+
+    <FILE Run="/bin/bash" Method="remove">
+        <INLINE>
+    # Add cleanup commands here
+    # Stop the service first if possible (need to know the rc.d script name)
+    # if [ -x /etc/rc.d/rc.vsax ]; then /etc/rc.d/rc.vsax stop; fi
+
+    # Remove the package (adjust name/version as needed)
+    removepkg vsax-&version;-x86_64-1
+
+    # Remove other created files/dirs if necessary
+    # rm -rf /etc/vsax /var/vsax /var/log/vsax etc...
+
+    echo "&name; has been removed."
+    </INLINE>
+    </FILE>
+
+</PLUGIN>
